@@ -1,5 +1,5 @@
 var request = require('request');
-
+var promise = require('bluebird');
 // your code here
 
 var simplePromise = function (bool) {
@@ -37,8 +37,34 @@ var reject = function (num) {
 }
 
 var sum50 = function() {
-    add10Promise
+    return new Promise(function(resolve, reject) {
+        var num = add10Promise().then(function(result) {
+            return(add10Promise(result));
+        }).then(function(result) {
+            return(add10Promise(result));
+        }).then(function(result) {
+            return(add10Promise(result));
+        }).then(function(result) {
+            return(add10Promise(result));
+        }).catch(function(err) {
+            return err;
+        })
+        if (num === 50) {
+            resolve(num);
+        } else {
+            reject(num);
+        };
+    }).then(function(result) {
+        return result;
+    }).catch(function(err) {
+        return err;
+    })
 }
+
+new Promise(function(resolve, reject) {
+  console.log('A promise.');
+  throw 'Boom!';
+});
 
 module.exports = {
   simplePromise: simplePromise,

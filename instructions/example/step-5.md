@@ -26,6 +26,8 @@ A promise.
 Unhandled rejection Boom!
 ```
 
+^^^(Im only getting ```A promise``` being returned to me when I run this command, even with bluebird required)
+
 Try commenting out the require statement for Bluebird and re-running the file. That `Unhandled rejection` will disappear. A nice feature of Bluebird is that it surfaces these errors to you; ES6 Promises won't do that.
 
 * * *
@@ -34,11 +36,13 @@ Try commenting out the require statement for Bluebird and re-running the file. T
 
 1. What are some other promise libraries? Find at least 3.
 1. You can handle the above thrown error with a `.catch()`; implement this on the above example so that the error logs the following message:
-  
+
   ```
   Error during the promise chain: Boom!
   ```
 1. Check out [Promise.method](http://bluebirdjs.com/docs/api/promise.method.html).
   * Rewrite `simplePromise()` using `Promise.method`.
+
+^^^(I'm not sure how to start this, I'm finding it quite confusing, as its showing a class prototype function? I'm not sure how to convert this to the correct format for a promise)
 
 [[Back](step-4.md)] - [[Continue](step-6.md)]

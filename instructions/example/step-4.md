@@ -8,11 +8,13 @@ We're going to create four new functions:
 * __reject__: This function should take a single argument (a number) and return a Promise that only rejects. It should reject with the same number it was given.
 * __sum50__: This function will take no arguments but will return a chain of Promises using the above `add10Promise()` function.
 
+^^^(chaining promises is pretty difficult, I could only do this because I knew the syntax, but I don't think it was covered anywhere before this section of the lecture. So maybe going through how to pass the result of one promise into the next one?)
+
 * * *
 
 ##### Before moving on to the next section, answer the following:
 
-1. Get all of the tests to pass inside of `src/example.spec.js`. 
+1. Get all of the tests to pass inside of `src/example.spec.js`.
 1. Inside of the `sum50` function, add a `.then(reject)` to the middle of the chain and re-run the tests.
   * If you get an `Error: Timeout` issue, that's likely because there's no `.catch()` case. Add one so that you still return a number.
   * If you receive an error like this, great job! `Failures ... Expected 30 to equal 50.` Keep the `.then(reject)` call where it is and still get the test to pass by adding more to the chain.

@@ -45,7 +45,7 @@ describe('Example', function () {
   });
 
   describe('#sum50', function () {
-    xit('returns the number 50', function (done) {
+    it('returns the number 50', function (done) {
       Example.sum50().then(function (result) {
         expect(result).toEqual(50);
         done();
