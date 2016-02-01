@@ -1,15 +1,15 @@
 var Example = require('../src/example');
 
-describe('Example', function () {  
+describe('Example', function () {
   describe('#simplePromise', function () {
-    xit('returns OK when given true', function (done) {
+    it('returns OK when given true', function (done) {
       Example.simplePromise(true).then(function (result) {
         expect(result).toEqual('OK');
         done();
       });
     });
 
-    xit('returns BAD when given false', function (done) {
+    it('returns BAD when given false', function (done) {
       Example.simplePromise(false).then(function (result) {
         expect(result).toEqual('BAD');
         done();
@@ -18,14 +18,14 @@ describe('Example', function () {
   });
 
   describe('#add10Promise', function () {
-    xit('adds 10 to the given number', function (done) {
+    it('adds 10 to the given number', function (done) {
       Example.add10Promise(15).then(function (result) {
         expect(result).toEqual(25);
         done();
       });
     });
 
-    xit('adds 10 to 0 when no number is given', function (done) {
+    it('adds 10 to 0 when no number is given', function (done) {
       Example.add10Promise().then(function (result) {
         expect(result).toEqual(10);
         done();
@@ -34,7 +34,7 @@ describe('Example', function () {
   });
 
   describe('#reject', function () {
-    xit('rejects in a promise, returning whatever was given to it', function (done) {
+    it('rejects in a promise, returning whatever was given to it', function (done) {
       Example.
         reject(10).
         catch(function (result) {
